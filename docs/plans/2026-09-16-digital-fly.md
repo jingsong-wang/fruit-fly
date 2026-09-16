@@ -12,8 +12,10 @@ Tasks:
 - [x] Implement worker and run zero-input versus sugar-input MN9 benchmark, comparing a dense reference integrator.
 - [x] Build a polished arena with food placement, sugar stimulation, sensory cut and MN9 silencing, real traces and recording export.
 - [x] Measure simulation speed; if insufficient, expose honest slowed simulation rather than pretend real-time.
-- [ ] Run browser QA and existing tests, publish through current GitHub Pages workflow, verify public data and behavior.
+- [x] Run browser QA and existing tests, publish through current GitHub Pages workflow, verify public data and behavior.
 
 Files: scripts/build-brain.py (download/conversion), dist/brain/{model.mjs,worker.mjs,world.mjs,view.mjs,app.mjs,index.html,style.css}, tests/brain.test.mjs, scripts/benchmark-brain.mjs, .github/workflows/pages.yml (build data at deployment).
 
 Validation is model-level, not wet-lab reproduction. A full shared-server NeuroMechFly backend remains a distinct upgrade if browser-local models cannot meet the accepted behavioral/performance target.
+
+Verified 2026-09-16: 16 local tests pass; full-graph MN9 checks 0 / 88 / 109 / 0 spikes for no input / sugar 100 Hz / sugar 150 Hz / silenced. Desktop and 390 px mobile browser checks passed, including actual feeding, sensory cut, MN9 silencing, validation and paused reset. Public Pages arena loaded its checked graph and consumed the initial food. Workflow run 35081457687 succeeded (validate and deploy). Independent review found no important issues. Browser download-event automation timed out, so JSON file saving was not independently confirmed; the export handler raised no browser errors.
