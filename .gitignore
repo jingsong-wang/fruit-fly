@@ -6,3 +6,7 @@ node_modules/
 *.log
 *.zip
 coverage/
+research/
+dist/brain/data/*.bin
+dist/brain/data/*.gz
+dist/brain/vendor/*.js

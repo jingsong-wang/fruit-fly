@@ -26,6 +26,18 @@ jobs:
         run: |
           node --check dist/app.mjs
           node --check dist/core.mjs
+          for file in dist/brain/*.mjs; do node --check "$file"; done
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build pinned whole-brain data and rendering assets
+        run: |
+          python -m pip install numpy==2.2.6 pyarrow==25.0.1
+          python scripts/build-brain.py --download
+      - name: Validate whole-brain feeding response
+        run: |
+          node scripts/benchmark-brain.mjs
+          python -c "from pathlib import Path; Path('dist/brain/data/connectome.bin').unlink()"
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
