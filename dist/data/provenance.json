@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/TuragaLab/flyvis",
+  "commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+  "source_path": "flyvis/connectome/fib25-fib19_v2.2.json",
+  "retrieved": "2026-09-16",
+  "sha256": "bfbb0766251ff09e22723d0ebbf7b14793e70b3ae8ad0eea64eac9d28223351a",
+  "license": "MIT (see LICENSE-flyvis)",
+  "paper": "https://doi.org/10.1038/s41586-024-07939-3",
+  "transformation": "Aggregate offset counts at cell-type level, preserve alpha sign, normalize absolute incoming weights. Duplicate as two independent rate-model channels. This is not the original flyvis model."
+}
